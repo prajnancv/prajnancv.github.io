@@ -104,6 +104,7 @@ a:hover {
 .section p {
   margin-bottom: 10px;
   font-size: 15px;
+  text-align: justify;
 }
 
 /* ===== AFFILIATION LOGOS ===== */
