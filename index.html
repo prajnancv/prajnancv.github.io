@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prajnan Goswami</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/NU_K100_Notched-N_wordmark.png">
+</head>
+<body>
+
+<div class="container" id="content"></div>
+
+<footer>
+  Based on the template by
+  <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.
+</footer>
+
+<script>
+  const sections = [
+    'section/profile.html',
+    'section/about.html',
+    // 'section/affiliations.html',
+    'section/interests.html',
+    'section/news.html',
+    'section/research.html',
+    // 'section/service.html'
+  ];
+
+  Promise.all(sections.map(s => fetch(s).then(r => r.text())))
+    .then(parts => {
+      document.getElementById('content').innerHTML = parts.join('\n');
+    });
+</script>
+
+</body>
+</html>
